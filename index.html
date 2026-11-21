@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>零工驿站 · 临时工招聘公告板</title>
+  <meta name="description" content="软木公告板上的临时工招聘：日结小时工、周末兼职、展会协助、旺季用工，钉在板上就是真的在招。" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- 木框公告板 -->
+  <div class="board-wrap">
+    <div class="board-frame">
+
+      <!-- 板头横幅 -->
+      <header class="banner">
+        <h1>零 工 驿 站</h1>
+        <p class="banner-sub">今日在招 <b id="jobCount">0</b> 单 · 好活不等人，看中就揭榜</p>
+      </header>
+
+      <!-- 工具横条 -->
+      <div class="toolbar">
+        <div class="filters" id="filters">
+          <button class="fbtn active" data-f="all">全部</button>
+          <button class="fbtn" data-f="日结">日结</button>
+          <button class="fbtn" data-f="周末">周末</button>
+          <button class="fbtn" data-f="短期">短期</button>
+          <button class="fbtn" data-f="远程">远程</button>
+        </div>
+        <input id="search" placeholder="🔍 搜工种 / 地点…" />
+        <button class="pin-new" id="pinNewBtn">＋ 我要招人</button>
+      </div>
+
+      <!-- 便签墙 -->
+      <main class="notes" id="notes"></main>
+
+      <p class="empty-tip" id="emptyTip" hidden>板上没有符合的活儿 —— 换个筛选试试</p>
+    </div>
+  </div>
+
+  <!-- 发布便签弹层 -->
+  <div class="veil" id="veil" hidden>
+    <div class="form-note">
+      <div class="pin pin-top"></div>
+      <h3>写一张招工便签</h3>
+      <label>活儿名称<input id="fTitle" placeholder="例：周末烘焙坊帮厨" maxlength="20" /></label>
+      <label>时薪（元）<input id="fPay" type="number" placeholder="例：22" min="1" max="999" /></label>
+      <label>地点<input id="fPlace" placeholder="例：朝阳区 · 望京" maxlength="16" /></label>
+      <label>类型
+        <select id="fType">
+          <option>日结</option><option>周末</option><option>短期</option><option>远程</option>
+        </select>
+      </label>
+      <label>详情<textarea id="fDesc" rows="3" placeholder="时间、要求、结算方式…" maxlength="80"></textarea></label>
+      <div class="form-acts">
+        <button class="act cancel" id="fCancel">算了</button>
+        <button class="act ok" id="fOk">钉 上 板</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
